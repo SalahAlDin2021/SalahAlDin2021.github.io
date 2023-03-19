@@ -54,7 +54,7 @@ footer {
   background-color: #333;
   color: #fff
 }
-footer>a{
+footer>a:link{
     margin-left: 15%;
     color: whitesmoke;
 }

@@ -10,7 +10,9 @@
     <div class="container">
         <h1>Oil Data Display</h1>
         <!-- Search Box for "رقم الزيت" -->
-        <input type="text" id="search-oil-number" placeholder="البحث باستخدام رقم الزيت" onkeyup="searchByOilNumber()">
+        <input type="text" id="search-oil-number" placeholder="البحث باستخدام رقم الزيت">
+        <!-- Search Button for "رقم الزيت" -->
+        <button id="search-button" onclick="searchByOilNumber()">بحث</button>
         <!-- Table to display data -->
         <table id="data-table">
             <thead>

@@ -52,7 +52,13 @@ function applyFilter() {
     // Filter data based on the selected column
     const filteredData = data.filter(item => {
         const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase() : '';
-        return fieldValue.includes(filterValue);
+
+        // Check if the column is 'رقم الزيت', apply exact match
+        if (currentColumn === 'رقم الزيت') {
+            return fieldValue === filterValue;  // Exact match
+        } else {
+            return fieldValue.includes(filterValue);  // Contains match
+        }
     });
 
     // Load the filtered data into the table

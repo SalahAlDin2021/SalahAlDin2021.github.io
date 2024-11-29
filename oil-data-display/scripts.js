@@ -55,12 +55,15 @@ function applyFilter() {
         return;
     }
 
-    // Check what column is being filtered
+    // Log the filtering column and value
     console.log('Filtering by column: ', currentColumn);
     console.log('Search filter value: ', filterValue);
 
     // Filter data based on the selected column
     const filteredData = data.filter(item => {
+        // Log the entire item object to check its structure
+        console.log("Item data:", item);
+
         // Normalize fieldValue by trimming spaces and converting to lowercase
         const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase().trim() : '';
 

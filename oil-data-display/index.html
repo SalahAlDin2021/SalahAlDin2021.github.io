@@ -10,51 +10,42 @@
     <div class="container">
         <h1>Oil Data Display</h1>
         
-        <!-- Individual Filters for each column -->
-        <div id="filters">
-            <input type="text" id="filter-رقم-الزيت" onkeyup="searchData()" placeholder="Search رقم الزيت...">
-            <input type="text" id="filter-المرسل" onkeyup="searchData()" placeholder="Search المرسل...">
-            <input type="text" id="filter-القرية-المدينة" onkeyup="searchData()" placeholder="Search القرية/ المدينة...">
-            <input type="text" id="filter-تلفون-المرسل" onkeyup="searchData()" placeholder="Search تلفون المرسل...">
-            <input type="text" id="filter-المستلم" onkeyup="searchData()" placeholder="Search المستلم...">
-            <input type="text" id="filter-المدينة-الولاية" onkeyup="searchData()" placeholder="Search المدينة / الولاية...">
-            <input type="text" id="filter-تلفون1-المستلم" onkeyup="searchData()" placeholder="Search 2 تلفون المستلم...">
-            <input type="text" id="filter-الكمية" onkeyup="searchData()" placeholder="Search الكمية...">
-            <input type="text" id="filter-زيت" onkeyup="searchData()" placeholder="Search زيت...">
-            <input type="text" id="filter-زيتون" onkeyup="searchData()" placeholder="Search زيتون...">
-            <input type="text" id="filter-المبلغ" onkeyup="searchData()" placeholder="Search المبلغ...">
-            <input type="text" id="filter-شيقل" onkeyup="searchData()" placeholder="Search شيقل...">
-            <input type="text" id="filter-دولار" onkeyup="searchData()" placeholder="Search دولار...">
-            <input type="text" id="filter-دينار" onkeyup="searchData()" placeholder="Search دينار...">
-            <input type="text" id="filter-رقم-المشتاح" onkeyup="searchData()" placeholder="Search رقم المشتاح...">
-        </div>
-        
         <!-- Table to display data -->
         <table id="data-table">
             <thead>
                 <tr>
-                    <th>رقم الزيت</th>
-                    <th>المرسل</th>
-                    <th>القرية/ المدينة</th>
-                    <th>تلفون المرسل</th>
-                    <th>المستلم</th>
-                    <th>المدينة / الولاية</th>
-                    <th>1 تلفون المستلم</th>
-                    <th>2 تلفون المستلم</th>
-                    <th>الكمية</th>
-                    <th>زيت</th>
-                    <th>زيتون</th>
-                    <th>المبلغ</th>
-                    <th>شيقل</th>
-                    <th>دولار</th>
-                    <th>دينار</th>
-                    <th>رقم المشتاح</th>
+                    <th>رقم الزيت <span class="filter-icon" onclick="openFilterModal('رقم_الزيت')">&#x1F50D;</span></th>
+                    <th>المرسل <span class="filter-icon" onclick="openFilterModal('المرسل')">&#x1F50D;</span></th>
+                    <th>القرية/ المدينة <span class="filter-icon" onclick="openFilterModal('القرية_المدينة')">&#x1F50D;</span></th>
+                    <th>تلفون المرسل <span class="filter-icon" onclick="openFilterModal('تلفون_المرسل')">&#x1F50D;</span></th>
+                    <th>المستلم <span class="filter-icon" onclick="openFilterModal('المستلم')">&#x1F50D;</span></th>
+                    <th>المدينة / الولاية <span class="filter-icon" onclick="openFilterModal('المدينة_الولاية')">&#x1F50D;</span></th>
+                    <th>1 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1_المستلم')">&#x1F50D;</span></th>
+                    <th>2 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1_المستلم')">&#x1F50D;</span></th>
+                    <th>الكمية <span class="filter-icon" onclick="openFilterModal('الكمية')">&#x1F50D;</span></th>
+                    <th>زيت <span class="filter-icon" onclick="openFilterModal('زيت')">&#x1F50D;</span></th>
+                    <th>زيتون <span class="filter-icon" onclick="openFilterModal('زيتون')">&#x1F50D;</span></th>
+                    <th>المبلغ <span class="filter-icon" onclick="openFilterModal('المبلغ')">&#x1F50D;</span></th>
+                    <th>شيقل <span class="filter-icon" onclick="openFilterModal('شيقل')">&#x1F50D;</span></th>
+                    <th>دولار <span class="filter-icon" onclick="openFilterModal('دولار')">&#x1F50D;</span></th>
+                    <th>دينار <span class="filter-icon" onclick="openFilterModal('دينار')">&#x1F50D;</span></th>
+                    <th>رقم المشتاح <span class="filter-icon" onclick="openFilterModal('رقم_المشتاح')">&#x1F50D;</span></th>
                 </tr>
             </thead>
             <tbody id="data-body">
                 <!-- Data rows will be inserted here -->
             </tbody>
         </table>
+    </div>
+
+    <!-- Modal for Column Filter -->
+    <div id="filter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFilterModal()">&times;</span>
+            <h2>Filter by Column</h2>
+            <input type="text" id="modal-search-input" placeholder="Search...">
+            <button onclick="applyFilter()">Apply Filter</button>
+        </div>
     </div>
 
     <script src="scripts.js"></script>

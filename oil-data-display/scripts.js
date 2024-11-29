@@ -62,7 +62,11 @@ function applyFilter() {
     // Filter data based on the selected column
     const filteredData = data.filter(item => {
         // Normalize fieldValue by trimming spaces and converting to lowercase
-        const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase().trim() : ''; 
+        const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase().trim() : '';
+
+        // Log the field value and the search value for debugging
+        console.log(`Field value for column ${currentColumn}: "${fieldValue}"`);
+        console.log(`Search value: "${filterValue}"`);
 
         // If it's 'رقم الزيت', apply exact match
         if (currentColumn === 'رقم الزيت') {

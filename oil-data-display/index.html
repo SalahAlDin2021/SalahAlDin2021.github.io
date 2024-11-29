@@ -9,20 +9,18 @@
 <body>
     <div class="container">
         <h1>Oil Data Display</h1>
-        <h2>البحث باستخدام رقم الزيت</h2>
-        <input type="text" id="search" placeholder="Search..." onkeyup="searchData()">
+        
         <!-- Table to display data -->
         <table id="data-table">
             <thead>
                 <tr>
-                    <th>رقم الزيت <span class="filter-icon" onclick="openFilterModal('رقم_الزيت')">&#x1F50D;</span></th>
+                    <th>رقم الزيت <span class="filter-icon" onclick="openFilterModal('رقم الزيت')">&#x1F50D;</span></th>
                     <th>المرسل <span class="filter-icon" onclick="openFilterModal('المرسل')">&#x1F50D;</span></th>
-                    <th>القرية/ المدينة <span class="filter-icon" onclick="openFilterModal('القرية_المدينة')">&#x1F50D;</span></th>
-                    <th>تلفون المرسل <span class="filter-icon" onclick="openFilterModal('تلفون_المرسل')">&#x1F50D;</span></th>
+                    <th>القرية/ المدينة <span class="filter-icon" onclick="openFilterModal('القرية/ المدينة')">&#x1F50D;</span></th>
+                    <th>تلفون المرسل <span class="filter-icon" onclick="openFilterModal('تلفون المرسل')">&#x1F50D;</span></th>
                     <th>المستلم <span class="filter-icon" onclick="openFilterModal('المستلم')">&#x1F50D;</span></th>
-                    <th>المدينة / الولاية <span class="filter-icon" onclick="openFilterModal('المدينة_الولاية')">&#x1F50D;</span></th>
-                    <th>1 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1_المستلم')">&#x1F50D;</span></th>
-                    <th>2 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1_المستلم')">&#x1F50D;</span></th>
+                    <th>المدينة / الولاية <span class="filter-icon" onclick="openFilterModal('المدينة / الولاية')">&#x1F50D;</span></th>
+                    <th>2 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1 المستلم')">&#x1F50D;</span></th>
                     <th>الكمية <span class="filter-icon" onclick="openFilterModal('الكمية')">&#x1F50D;</span></th>
                     <th>زيت <span class="filter-icon" onclick="openFilterModal('زيت')">&#x1F50D;</span></th>
                     <th>زيتون <span class="filter-icon" onclick="openFilterModal('زيتون')">&#x1F50D;</span></th>
@@ -30,7 +28,7 @@
                     <th>شيقل <span class="filter-icon" onclick="openFilterModal('شيقل')">&#x1F50D;</span></th>
                     <th>دولار <span class="filter-icon" onclick="openFilterModal('دولار')">&#x1F50D;</span></th>
                     <th>دينار <span class="filter-icon" onclick="openFilterModal('دينار')">&#x1F50D;</span></th>
-                    <th>رقم المشتاح <span class="filter-icon" onclick="openFilterModal('رقم_المشتاح')">&#x1F50D;</span></th>
+                    <th>رقم المشتاح <span class="filter-icon" onclick="openFilterModal('رقم المشتاح')">&#x1F50D;</span></th>
                 </tr>
             </thead>
             <tbody id="data-body">

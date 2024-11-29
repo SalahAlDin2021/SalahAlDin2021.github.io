@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h1>Oil Data Display</h1>
-        
+        <!-- Search Box for "رقم الزيت" -->
+        <input type="text" id="search-oil-number" placeholder="البحث باستخدام رقم الزيت" onkeyup="searchByOilNumber()">
         <!-- Table to display data -->
         <table id="data-table">
             <thead>
@@ -20,7 +21,8 @@
                     <th>تلفون المرسل <span class="filter-icon" onclick="openFilterModal('تلفون المرسل')">&#x1F50D;</span></th>
                     <th>المستلم <span class="filter-icon" onclick="openFilterModal('المستلم')">&#x1F50D;</span></th>
                     <th>المدينة / الولاية <span class="filter-icon" onclick="openFilterModal('المدينة / الولاية')">&#x1F50D;</span></th>
-                    <th>2 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1 المستلم')">&#x1F50D;</span></th>
+                    <th>1 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون1 المستلم')">&#x1F50D;</span></th>
+                    <th>2 تلفون المستلم <span class="filter-icon" onclick="openFilterModal('تلفون2 المستلم')">&#x1F50D;</span></th>
                     <th>الكمية <span class="filter-icon" onclick="openFilterModal('الكمية')">&#x1F50D;</span></th>
                     <th>زيت <span class="filter-icon" onclick="openFilterModal('زيت')">&#x1F50D;</span></th>
                     <th>زيتون <span class="filter-icon" onclick="openFilterModal('زيتون')">&#x1F50D;</span></th>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Data Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Oil Data Display</h1>
+        <input type="text" id="search" placeholder="Search..." onkeyup="searchData()">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>رقم الزيت</th>
+                    <th>المرسل</th>
+                    <th>القرية/ المدينة</th>
+                    <th>المستلم</th>
+                    <th>المدينة / الولاية</th>
+                    <th>تلفون1 المستلم</th>
+                    <th>الكمية</th>
+                    <th>زيت</th>
+                    <th>زيتون</th>
+                    <th>المبلغ</th>
+                    <th>دولار</th>
+                </tr>
+            </thead>
+            <tbody id="data-body">
+                <!-- Data rows will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

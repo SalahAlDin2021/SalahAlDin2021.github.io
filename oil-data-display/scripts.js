@@ -20,7 +20,7 @@ function loadTableData(filteredData) {
 
         Object.values(item).forEach(value => {
             const cell = document.createElement('td');
-            cell.textContent = value || '-';
+            cell.textContent = value || '-'; // If the value is null or undefined, display '-'
             row.appendChild(cell);
         });
 
@@ -47,11 +47,17 @@ function closeFilterModal() {
 
 // Apply the filter based on the modal input
 function applyFilter() {
-    const filterValue = document.getElementById('modal-search-input').value.toLowerCase();
+    const filterValue = document.getElementById('modal-search-input').value.trim().toLowerCase(); // Trim whitespaces
+
+    if (!filterValue) {
+        loadTableData(data); // If the filter value is empty, show all data
+        closeFilterModal();
+        return;
+    }
 
     // Filter data based on the selected column
     const filteredData = data.filter(item => {
-        const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase() : '';
+        const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase().trim() : '';  // Handle null and trim spaces
 
         // Check if the column is 'رقم الزيت', apply exact match
         if (currentColumn === 'رقم الزيت') {

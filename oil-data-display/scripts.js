@@ -55,18 +55,30 @@ function applyFilter() {
         return;
     }
 
+    // Check what column is being filtered
+    console.log('Filtering by column: ', currentColumn);
+    console.log('Search filter value: ', filterValue);
+
     // Filter data based on the selected column
     const filteredData = data.filter(item => {
-        const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase().trim() : '';  // Handle null and trim spaces
+        // Normalize fieldValue by trimming spaces and converting to lowercase
+        const fieldValue = item[currentColumn] ? item[currentColumn].toString().toLowerCase().trim() : ''; 
 
-        // Check if the column is 'رقم الزيت', apply exact match
+        // If it's 'رقم الزيت', apply exact match
         if (currentColumn === 'رقم الزيت') {
-            return fieldValue === filterValue;  // Exact match
+            const isExactMatch = fieldValue === filterValue;
+            console.log(`Exact match for رقم الزيت: ${isExactMatch}`);
+            return isExactMatch;  // Exact match
         } else {
-            return fieldValue.includes(filterValue);  // Contains match
+            const containsMatch = fieldValue.includes(filterValue);  // Contains match for other fields
+            console.log(`Contains match for column ${currentColumn}: ${containsMatch}`);
+            return containsMatch;  // Contains match
         }
     });
 
+    // Log the number of rows found
+    console.log(`Filtered data count: ${filteredData.length}`);
+    
     // Load the filtered data into the table
     loadTableData(filteredData);
 

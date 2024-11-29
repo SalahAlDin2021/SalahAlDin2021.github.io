@@ -9,7 +9,27 @@
 <body>
     <div class="container">
         <h1>Oil Data Display</h1>
-        <input type="text" id="search" placeholder="Search..." onkeyup="searchData()">
+        
+        <!-- Individual Filters for each column -->
+        <div id="filters">
+            <input type="text" id="filter-رقم-الزيت" onkeyup="searchData()" placeholder="Search رقم الزيت...">
+            <input type="text" id="filter-المرسل" onkeyup="searchData()" placeholder="Search المرسل...">
+            <input type="text" id="filter-القرية-المدينة" onkeyup="searchData()" placeholder="Search القرية/ المدينة...">
+            <input type="text" id="filter-تلفون-المرسل" onkeyup="searchData()" placeholder="Search تلفون المرسل...">
+            <input type="text" id="filter-المستلم" onkeyup="searchData()" placeholder="Search المستلم...">
+            <input type="text" id="filter-المدينة-الولاية" onkeyup="searchData()" placeholder="Search المدينة / الولاية...">
+            <input type="text" id="filter-تلفون1-المستلم" onkeyup="searchData()" placeholder="Search 2 تلفون المستلم...">
+            <input type="text" id="filter-الكمية" onkeyup="searchData()" placeholder="Search الكمية...">
+            <input type="text" id="filter-زيت" onkeyup="searchData()" placeholder="Search زيت...">
+            <input type="text" id="filter-زيتون" onkeyup="searchData()" placeholder="Search زيتون...">
+            <input type="text" id="filter-المبلغ" onkeyup="searchData()" placeholder="Search المبلغ...">
+            <input type="text" id="filter-شيقل" onkeyup="searchData()" placeholder="Search شيقل...">
+            <input type="text" id="filter-دولار" onkeyup="searchData()" placeholder="Search دولار...">
+            <input type="text" id="filter-دينار" onkeyup="searchData()" placeholder="Search دينار...">
+            <input type="text" id="filter-رقم-المشتاح" onkeyup="searchData()" placeholder="Search رقم المشتاح...">
+        </div>
+        
+        <!-- Table to display data -->
         <table id="data-table">
             <thead>
                 <tr>
@@ -19,7 +39,6 @@
                     <th>تلفون المرسل</th>
                     <th>المستلم</th>
                     <th>المدينة / الولاية</th>
-                    <th>2 تلفون المستلم</th>
                     <th>2 تلفون المستلم</th>
                     <th>الكمية</th>
                     <th>زيت</th>

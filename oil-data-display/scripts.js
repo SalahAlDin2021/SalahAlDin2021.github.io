@@ -45,6 +45,21 @@ function closeFilterModal() {
     modal.style.display = 'none';
 }
 
+// Function to filter by "رقم الزيت"
+function searchByOilNumber() {
+    const searchValue = document.getElementById('search-oil-number').value.trim();  // Get the value of the search input
+    const filteredData = data.filter(item => {
+        // Exact match for "رقم الزيت"
+        return item['رقم الزيت'] && item['رقم الزيت'].toString() === searchValue;
+    });
+
+    // Log the filtered data count
+    console.log(`Filtered data count by رقم الزيت: ${filteredData.length}`);
+
+    // Load the filtered data into the table
+    loadTableData(filteredData);
+}
+
 // Apply the filter based on the modal input
 function applyFilter() {
     const filterValue = document.getElementById('modal-search-input').value.trim().toLowerCase(); // Trim whitespaces

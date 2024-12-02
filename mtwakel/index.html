@@ -5,6 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Data Table</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="module">
+  // Import the Firebase SDK
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Fetch data and populate table
+  async function fetchData() {
+    const querySnapshot = await getDocs(collection(db, "your-collection-name"));
+    const tableBody = document.querySelector("#responsiveTable tbody");
+    tableBody.innerHTML = ""; // Clear existing rows
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${data.Serial_No || ""}</td>
+        <td>${data["Sender's_Name"] || ""}</td>
+        <td>${data.City_Sender || ""}</td>
+        <td>${data["Sender's_Mobile"] || ""}</td>
+        <td>${data.Name_of_Receiver || ""}</td>
+        <td>${data.City_Receiver || ""}</td>
+        <td>${data.Mobile_of_Receiver1 || ""}</td>
+        <td>${data.Mobile_of_Receiver2 || ""}</td>
+        <td>${data.Quantity || ""}</td>
+        <td>${data.oil || ""}</td>
+        <td>${data.Olive || ""}</td>
+        <td>${data.Amount || ""}</td>
+        <td>${data.Nis || ""}</td>
+        <td>${data.Dollar || ""}</td>
+        <td>${data.Dinar || ""}</td>
+        <td>${data.Pallet_No || ""}</td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  }
+
+  fetchData();
+</script>
 </head>
 <body>
   <div class="table-container">

@@ -1,1 +1,64 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Data Table</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="table-container">
+    <input type="text" id="filterInput" placeholder="Search..." onkeyup="filterTable()">
+    <table id="responsiveTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">رقم الزيت</th>
+          <th onclick="sortTable(1)">المرسل</th>
+          <th onclick="sortTable(2)">القرية/ المدينة</th>
+          <th onclick="sortTable(3)">تلفون المرسل</th>
+          <th onclick="sortTable(4)">المستلم</th>
+          <th onclick="sortTable(5)">المدينة / الولاية</th>
+          <th onclick="sortTable(6)">تلفون1 المستلم</th>
+          <th onclick="sortTable(7)">تلفون2 مستلم</th>
+          <th onclick="sortTable(8)">الكمية</th>
+          <th onclick="sortTable(9)">زيت</th>
+          <th onclick="sortTable(10)">زيتون</th>
+          <th onclick="sortTable(11)">المبلغ</th>
+          <th onclick="sortTable(12)">شيقل</th>
+          <th onclick="sortTable(13)">دولار</th>
+          <th onclick="sortTable(14)">دينار</th>
+          <th onclick="sortTable(15)">رقم المشتاح</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dummy data -->
+        <tr>
+          <td>001</td>
+          <td>محمد أحمد</td>
+          <td>القدس</td>
+          <td>123456789</td>
+          <td>علي حسين</td>
+          <td>رام الله</td>
+          <td>987654321</td>
+          <td>567890123</td>
+          <td>10</td>
+          <td>5</td>
+          <td>5</td>
+          <td>100</td>
+          <td>50</td>
+          <td>20</td>
+          <td>30</td>
+          <td>ABC123</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button onclick="changePage(-1)">Previous</button>
+      <span id="pageDisplay">Page 1</span>
+      <button onclick="changePage(1)">Next</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

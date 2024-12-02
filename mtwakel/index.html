@@ -11,25 +11,73 @@
     <input type="text" id="filterInput" placeholder="Search..." onkeyup="filterTable()">
     <table id="responsiveTable">
       <thead>
-        <tr>
-          <th onclick="sortTable(0)">رقم الزيت</th>
-          <th onclick="sortTable(1)">المرسل</th>
-          <th onclick="sortTable(2)">القرية/ المدينة</th>
-          <th onclick="sortTable(3)">تلفون المرسل</th>
-          <th onclick="sortTable(4)">المستلم</th>
-          <th onclick="sortTable(5)">المدينة / الولاية</th>
-          <th onclick="sortTable(6)">تلفون1 المستلم</th>
-          <th onclick="sortTable(7)">تلفون2 مستلم</th>
-          <th onclick="sortTable(8)">الكمية</th>
-          <th onclick="sortTable(9)">زيت</th>
-          <th onclick="sortTable(10)">زيتون</th>
-          <th onclick="sortTable(11)">المبلغ</th>
-          <th onclick="sortTable(12)">شيقل</th>
-          <th onclick="sortTable(13)">دولار</th>
-          <th onclick="sortTable(14)">دينار</th>
-          <th onclick="sortTable(15)">رقم المشتاح</th>
-        </tr>
-      </thead>
+  <tr>
+    <th>
+      رقم الزيت
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(0, this)">
+    </th>
+    <th>
+      المرسل
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(1, this)">
+    </th>
+    <th>
+      القرية/ المدينة
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(2, this)">
+    </th>
+    <th>
+      تلفون المرسل
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(3, this)">
+    </th>
+    <th>
+      المستلم
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(4, this)">
+    </th>
+    <th>
+      المدينة / الولاية
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(5, this)">
+    </th>
+    <th>
+      تلفون1 المستلم
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(6, this)">
+    </th>
+    <th>
+      تلفون2 مستلم
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(7, this)">
+    </th>
+    <th>
+      الكمية
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(8, this)">
+    </th>
+    <th>
+      زيت
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(9, this)">
+    </th>
+    <th>
+      زيتون
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(10, this)">
+    </th>
+    <th>
+      المبلغ
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(11, this)">
+    </th>
+    <th>
+      شيقل
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(12, this)">
+    </th>
+    <th>
+      دولار
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(13, this)">
+    </th>
+    <th>
+      دينار
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(14, this)">
+    </th>
+    <th>
+      رقم المشتاح
+      <input type="text" placeholder="Search..." onkeyup="filterColumn(15, this)">
+    </th>
+  </tr>
+</thead>
       <tbody>
         <!-- Dummy data -->
         <tr>

@@ -46,3 +46,18 @@ function changePage(step) {
 document.addEventListener("DOMContentLoaded", () => {
   changePage(0);
 });
+
+function filterColumn(columnIndex, inputElement) {
+  const filter = inputElement.value.toLowerCase();
+  const table = document.getElementById("responsiveTable");
+  const rows = table.tBodies[0].rows;
+
+  Array.from(rows).forEach(row => {
+    const cell = row.cells[columnIndex];
+    if (cell) {
+      const cellText = cell.textContent || cell.innerText;
+      row.style.display = cellText.toLowerCase().includes(filter) ? "" : "none";
+    }
+  });
+}
+
